@@ -1,5 +1,90 @@
-<html>
-  <head>
-    <title>AVD Burger</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AVD Burger Information System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    🍔 AVD Burger System
+  </div>
+
+  <div id="nav-menu" class="nav-bar" style="display: none;">
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('reports')">Report Generator</button>
+    <button onclick="showSection('about')">About Program</button>
+    <button onclick="logout()" class="logout-btn">Log Out</button>
+  </div>
+
+  <div class="container">
+    
+    <div id="login" class="module-section">
+      <h2>Employee Login</h2>
+      <input type="text" placeholder="Username" class="input-field">
+      <input type="password" placeholder="Password" class="input-field">
+      <button onclick="login()" class="full-width-btn">Log In</button>
+      <p class="link-text" onclick="showSection('recovery')">Forgot Password?</p>
+    </div>
+
+    <div id="recovery" class="module-section" style="display: none;">
+      <h2>Password Recovery</h2>
+      <p>Enter your employee email to receive a reset link.</p>
+      <input type="email" placeholder="Employee Email" class="input-field">
+      <button onclick="alert('Recovery link sent!')" class="full-width-btn">Send Link</button>
+      <p class="link-text" onclick="showSection('login')">Back to Login</p>
+    </div>
+
+    <div id="dashboard" class="module-section" style="display: none;">
+      <h2>Cashier Dashboard - Menu</h2>
+      
+      <div class="menu-item">
+        <span>Classic Burger (₱65.00)</span>
+        <button onclick="order('Classic Burger')">Punch Order</button>
+      </div>
+      <div class="menu-item">
+        <span>Cheese Burger (₱85.00)</span>
+        <button onclick="order('Cheese Burger')">Punch Order</button>
+      </div>
+      <div class="menu-item">
+        <span>Bacon Burger (₱110.00)</span>
+        <button onclick="order('Bacon Burger')">Punch Order</button>
+      </div>
+
+      <div class="order-summary">
+        <h3 id="output">No items punched yet.</h3>
+      </div>
+    </div>
+
+    <div id="reports" class="module-section" style="display: none;">
+      <h2>Generate Reports</h2>
+      <p>Select a date range to generate the daily sales report.</p>
+      <div class="date-filters">
+        <input type="date" class="input-field">
+        <span>to</span>
+        <input type="date" class="input-field">
+      </div>
+      <button onclick="alert('Generating PDF Report...')" class="full-width-btn">Generate Sales Report</button>
+      
+      <table class="report-table">
+        <tr><th>Item</th><th>Qty</th><th>Total</th></tr>
+        <tr><td>Classic Burger</td><td>15</td><td>₱975.00</td></tr>
+        <tr><td>Cheese Burger</td><td>8</td><td>₱680.00</td></tr>
+      </table>
+    </div>
+
+    <div id="about" class="module-section" style="display: none;">
+      <h2>About The Program</h2>
+      <p><strong>System Name:</strong> AVD Burger POS & Management System</p>
+      <p><strong>Version:</strong> 1.0.0</p>
+      <p><strong>Description:</strong> A comprehensive information system designed to handle cashier transactions, log price audits, and manage fast-food inventory.</p>
+      <p><strong>Developer:</strong> IT Department</p>
+    </div>
+
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
 </html>
