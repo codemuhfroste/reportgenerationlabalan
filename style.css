@@ -1,116 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: #2c3e50;
   margin: 0;
+  line-height: 1.6;
 }
 
 .header {
-  background-color: #e67e22;
+  background: linear-gradient(135deg, #e67e22, #d35400);
   color: white;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
 }
 
 .nav-bar {
-  background-color: #333;
-  padding: 10px;
+  background-color: #1a252f;
+  padding: 12px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .nav-bar button {
   margin: 0 5px;
-  background-color: #555;
+  background-color: transparent;
+  color: #ecf0f1;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .nav-bar button:hover {
-  background-color: #e67e22;
+  background-color: rgba(230, 126, 34, 0.15);
+  color: #e67e22;
 }
 
-.nav-bar .logout-btn {
-  background-color: #c0392b;
-}
+.nav-bar .logout-btn { color: #e74c3c; }
 
 .container {
+  max-width: 950px; 
+  margin: 40px auto;
+}
+
+.content-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2 {
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button.full-width-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e67e22;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.report-table {
+  width: 100%;
+  margin-top: 25px;
+  border-collapse: collapse;
+}
+
+.report-table th, .report-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.report-table th { background-color: #f8f9fa; }
+
+.transaction-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.transaction-header h2 {
+  font-size: 32px;
+  border: none;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.transaction-header h3 {
+  font-size: 24px;
+  margin-top: 0;
+  font-weight: normal;
+  color: #333;
+}
+
+.dashboard-flex {
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch;
+  gap: 30px;
+}
+
+.menu-panel {
+  flex: 1.3; 
+  background: #ffffff;
   padding: 30px;
-  max-width: 500px;
-  margin: auto;
-  background: white;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.menu-panel h4 {
+  margin-top: 0;
+  font-size: 20px;
 }
 
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 0;
-  padding-bottom: 10px;
+  padding: 15px 0;
   border-bottom: 1px solid #eee;
 }
 
-button {
-  padding: 10px 15px;
+.menu-item button {
+  padding: 8px 16px;
   background-color: #e67e22;
   border: none;
   color: white;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #ca6f1e;
-}
-
-.input-field {
-  width: 95%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.full-width-btn {
-  width: 100%;
-  margin-top: 10px;
-}
-
-.link-text {
-  color: #e67e22;
-  text-align: center;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 15px;
-}
-
-.link-text:hover {
-  text-decoration: underline;
-}
-
 .order-summary {
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 15px;
-  background-color: #fdf2e9;
-  border-radius: 5px;
+  background-color: #fff3e0;
+  border-radius: 6px;
   text-align: center;
+  color: #000;
 }
 
-.report-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
+.receipt-panel {
+  flex: 1; 
+  background: #ffffff;
+  border: 4px solid #000000;
+  padding: 30px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
-.report-table th, .report-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
 }
 
-.report-table th {
-  background-color: #e67e22;
-  color: white;
+.receipt-item-qty {
+  margin-right: 15px;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: auto;
 }
